@@ -1,0 +1,144 @@
+:root {
+  --bgcolor1: #FFFFFF;
+  --bgcolor2: var(--bgcolor1);
+  --bodytext: grey;
+  --titlecolor: #3B3B3B;
+  --buttonbg1: #1cd8d2;
+  --buttonbg2: #93edc7;
+  --buttontext: #fff;
+  --iconcolor: var(--buttonbg);
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('../fonts/averta/AvertaDemoPECuttedDemo-Regular.otf')
+}
+
+button {
+  border: transparent;
+  background: transparent;
+}
+
+a {
+  display: inline-block;
+  color: var(--buttonbg)
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+/*  background: -webkit-linear-gradient(var(--buttonbg1), var(--buttonbg2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+  color: var(--titlecolor);
+}
+
+i {
+  transition-duration: 0.5s
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+
+body {
+  background:linear-gradient(
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.2)),
+    url(../images/pexels-asad-photo-maldives-1198839.jpg);
+  background: var(--bgcolor1);
+  background-size: contain;
+  color: var(--bodytext);
+  font-family: 'Averta', sans-serif;
+  word-wrap: break-word;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/** {
+  font-size: 1.25rem;
+}*/
+
+.logo {
+  display: absolute;
+  width: 100px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 70%;
+    /*background: rgba(255, 255, 255, 0.1);*/
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.call-to-action-container {
+  margin-top: 10px;
+}
+
+.call-to-action {
+    background: linear-gradient(to left, var(--buttonbg1), var(--buttonbg2));;
+    color: var(--buttontext);
+    border-radius: 5px;
+    padding: 15px;
+    width: 150px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#cancel-btn {
+  background: #ff5349;
+  color: var(--buttontext);
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  background: #dcdcdc;
+  justify-content: space-evenly;
+  padding: 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  margin: 20px auto;
+}
+
+.status-filename {
+  width: 50%;
+}
+
+.transcription-status {
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  background: var(--buttonbg1);
+  color: #0F7673;
+  width: 25%;
+}
+
+.not-visible {
+    display: none;
+}
+
+.transcription-download-container {
+  display: block;
+  padding: 10px;
+  width: 5%;
+}
+
+.download-link i {
+  color: var(--buttonbg1);
+  font-size: 36px;
+}

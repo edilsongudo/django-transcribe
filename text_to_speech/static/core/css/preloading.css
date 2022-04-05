@@ -1,0 +1,45 @@
+.preloading {
+    background: var(--bgcolor1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.dot1 {
+    background-color: #1abc9c;
+    animation: jump-up 1s 0.1s linear infinite;
+}
+
+.dot2 {
+    background-color: #ffd64a;
+    animation: jump-up 1s 0.2s linear infinite;
+
+}
+
+.dot3 {
+    background-color: #e067af;
+    animation: jump-up 1s 0.3s linear infinite;
+
+}
+
+@Keyframes jump-up {
+    50% {
+        transform: translate(0, 15px);
+    }
+}

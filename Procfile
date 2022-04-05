@@ -1,0 +1,1 @@
+web: python text_to_speech/manage.py runserver 0.0.0.0:$PORT

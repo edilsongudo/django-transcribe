@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Audio to Text Converter</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/libraries/fontawesome-free-5.15.2-web/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/preloading.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/progressBar.css' %}">
+</head>
+<body>
+    <div class="preloading">
+        <div>
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+        </div>
+    </div>
+    <img class="logo" src="../static/core/images/NCCL.png">
+    <h1>Audio to text</h1>
+    <p>Upload an audio file</p>
+    <form id="upload-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <div class="call-to-action-container">
+            <button class="call-to-action" id="upload-file">Transcribe</button>
+        </div>
+    </form>
+    <div class="progress-container">
+        <div class="progress not-visible">
+            <div class="progress-done" data-done="0">
+                0%
+            </div>
+        </div>
+    </div>
+    <div id="cancel-box" class="not-visible">
+        <button id="cancel-btn" class="btn btn-danger">Cancel Upload <i class="fal fa-times"></i></button>
+    </div>
+    <div class="status-container">
+        <div class="status-filename">No File Selected</div>
+        <div class="transcription-status"><b>Status:</b> None</div>
+        <div class="transcription-download-container"><a class="download-link not-visible" href=""><i class="fal fa-file-download"></i></a></div>
+    </div>
+    <script type="text/javascript">$SCRIPT_ROOT = "{{ request.scheme }}://{{ request.get_host }}";</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="{% static 'core/js/assemblyAi.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/ajaxFileUpload.js' %}"></script>
+    <script>
+        $(window).on('load', function () {
+            $('.preloading').fadeOut('slow')
+        })
+    </script>
+</body>
+</html>
